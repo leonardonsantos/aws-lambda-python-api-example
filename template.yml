@@ -1,0 +1,13 @@
+Resources:
+  Campaigns:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.6
+      Handler: handler.main
+      Timeout: 10
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /api/{parameter1}/{parameter2}
+            Method: get
