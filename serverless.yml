@@ -1,0 +1,23 @@
+service: api-example
+
+provider:
+    name: aws
+    stage: dev
+    runtime: python3.6
+    timeout: 10
+
+functions:
+  main:
+    handler: handler.main
+    events:
+        - http:
+            path: /api/{parameter1}/{parameter2}
+            method: GET
+            integration: lambda
+            request:
+              parameters:
+                paths:
+                  parameter1: true
+                  parameter2: true
+                querystrings:
+                  looks: false
