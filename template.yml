@@ -3,7 +3,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Runtime: python3.6
-      Handler: handler.main
+      Handler: handler.local
       Timeout: 10
       Events:
         Api:
